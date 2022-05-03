@@ -2,8 +2,8 @@
 This is a .NET CORE RESTFUL API to manage pdf files on Azure Blob Storage.
 It has been tested with Azurite as this was the only Azure Blob Storage Emulator available on Mac.
 
-Created: 18/10/2020
-Author: Thomas Varghese
+Created: 02/05/2022
+Author: Pranay Pandey
 
 
 
