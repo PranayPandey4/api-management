@@ -32,3 +32,17 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    downloadPath: '$(System.ArtifactsDirectory)'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Visual Studio Enterprise with MSDN (dd7dd2b4-660d-40f2-8279-a9ca6dc135b8)'
+    appType: 'webApp'
+    WebAppName: 'blazewebapp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
